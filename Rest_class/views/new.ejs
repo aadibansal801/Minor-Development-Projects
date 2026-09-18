@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Create Post</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            Instagram
+        </div>
+        <a class="create-btn" href="/posts">
+            Home
+        </a>
+    </nav>
+    <div class="form-container">
+        <h2>Create New Post</h2>
+        <form
+            method="post"
+            action="/posts"
+            enctype="multipart/form-data"
+        >
+            <input
+                class="form-input"
+                placeholder="Username"
+                name="username"
+                type="text"
+            >
+            <textarea
+                class="form-textarea"
+                placeholder="Write your post here..."
+                name="content"
+            ></textarea>
+            <input
+                class="form-input"
+                type="file"
+                name="image"
+                accept="image/*"
+            >
+            <button
+                class="submit-btn"
+                type="submit"
+            >
+                Create Post
+            </button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Post</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            Instagram
+        </div>
+        <a class="create-btn" href="/posts">
+            Home
+        </a>
+    </nav>
+    <main class="show-container">
+        <div class="post">
+            <div class="post-header">
+                <div class="avatar"></div>
+                <h3 class="user">
+                    @<%= post.username %>
+                </h3>
+            </div>
+            <img
+                class="post-image"
+                src="<%= post.image %>"
+            >
+            <div class="actions">
+                <button class="action">
+                    ♡
+                </button>
+                <button class="action">
+                    💬
+                </button>
+                <button class="action">
+                    ➤
+                </button>
+            </div>
+            <div class="post-body">
+                <h4 class="content">
+                    <strong>
+                        @<%= post.username %>
+                    </strong>
+                    <%= post.content %>
+                </h4>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Edit Post</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            Instagram
+        </div>
+        <a class="create-btn" href="/posts">
+            Home
+        </a>
+    </nav>
+    <div class="form-container">
+        <h2>Edit Post</h2>
+        <img
+            class="edit-image"
+            src="<%= post.image %>"
+        >
+        <form
+            method="post"
+            action="/posts/<%= post.id %>?_method=PATCH"
+        >
+            <textarea
+                class="form-textarea"
+                name="content"
+                placeholder="Write your post here..."
+            ><%= post.content %></textarea>
+            <button
+                class="submit-btn"
+                type="submit"
+            >
+                Save Changes
+            </button>
+        </form>
+        <div class="post-links">
+            <a href="/posts/<%= post.id %>">
+                Cancel
+            </a>
+        </div>
+    </div>
+</body>
+</html>

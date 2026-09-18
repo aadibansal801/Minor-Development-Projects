@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Instagram Posts</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            Instagram
+        </div>
+        <a class="create-btn" href="/posts/new">
+            + Create Post
+        </a>
+    </nav>
+    <main class="feed">
+        <% for(let post of posts){ %>
+            <div class="post">
+                <div class="post-header">
+                    <div class="avatar"></div>
+                    <h3 class="user">
+                        @<%= post.username %>
+                    </h3>
+                </div>
+                <img class="post-image" src="<%= post.image %>">
+                <div class="actions">
+                    <button class="action">
+                        ♡
+                    </button>
+                    <button class="action">
+                        💬
+                    </button>
+                    <button class="action">
+                        ➤
+                    </button>
+                </div>
+                <div class="post-body">
+                    <h4 class="content">
+                        <strong>@<%= post.username %></strong>
+                        <%= post.content %>
+                    </h4>
+                </div>
+                <div class="post-links">
+                    <a href="/posts/<%= post.id %>">
+                        View Post
+                    </a>
+                    <a href="/posts/<%= post.id %>/edit">
+                        Edit
+                    </a>
+                    <form
+                        method="post"
+                        action="/posts/<%= post.id %>?_method=DELETE"
+                        style="display:inline;"
+                    >
+                        <button class="delete-btn">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </main>
+</body>
+</html>
